@@ -1,0 +1,19 @@
+.p50{
+    padding-top: 50px;
+    padding-inline: 100px;
+    padding-bottom: 50px;
+}
+.color-1 {
+    background-color: #bb586a;
+}
+.color-2 {
+ background-color: #e09da9;
+}
+.color-3 {
+    background-color: #ccc5c6;
+}
+.bg {
+    padding-inline: 10px;
+    padding-block: 5px;
+    border: 1px solid black;
+}
