@@ -138,11 +138,37 @@
                             <div class="col-8 mb-2 text-center">
                                 <input type="checkbox" name="agreement" class="form-check-input" id="agreement"
                                     value="agreement">
-                                <label for="agreement">Terms & Condition</label>
+                                <label for="agreement"><a href="#" data-bs-toggle="modal" data-bs-target="#showTarget">Terms & Condition</a></label>
                             </div>
                             <div class="col-8 mb-2 text-center">
                                 <button class="btn btn-secondary" type="reset">Reset</button>
                                 <button type="submit" class="btn btn-primary"><i class="fa-solid fa-square-arrow-up-right me-2"></i>Submit</button>
+                            </div>
+                            <div class="ms-auto" style="width: fit-content;">
+                                <button 
+                                class="btn btn-primary"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#userTarget"
+                                data-bs-name="santhosh"
+                                data-bs-email="santhosh@yopmail.com"
+                                data-bs-social="santhosh1234"
+                                >
+                                    <i class="fa fa-user"></i>
+                                    santhosh                                   
+                                </button>
+                                <button
+                                class="btn btn-primary"
+                                type="button"
+                                data-bs-toggle="modal"
+                                data-bs-target="#userTarget"
+                                data-bs-name="kumar"
+                                data-bs-email="kumar@yopmail.com"
+                                data-bs-social="kumar123"
+                                >
+                                    <i class="fa-regular fa-user"></i>
+                                    kumar
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -150,6 +176,95 @@
             </div>
         </div>
     </div>
+    <!-- modal 1 -->
+    <div class="modal fade" id="showTarget" tabindex="-1" aria-labelledby="showTarget" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">Terms & Condition</h1>
+                    <button class="btn btn-close" type="button" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h5>Agree to the Terms</h5>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid, amet
+                    expedita qui sunt repellat ratione porro labore. Dolorum dolore hic, aliquam
+                    ullam incidunt pariatur modi eos dolores perferendis possimus quaerat!</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">
+                        close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal 2 -->
+    <div class="modal fade" id="userTarget" tabindex="-1" aria-labelledby="userTarget" data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title">User login</h1>
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTScJ_GgDAewRKGu2-hO6qoPloKSMq-W3zGPQ&usqp=CAU" width="150" alt="user Avatar">
+                        </div>
+                        <div class="col-sm-8">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            Name:
+                                        </th>
+                                        <td class="name">
+                                        </td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th>
+                                            Email:
+                                        </th>
+                                        <td class="email">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>
+                                            social:
+                                        </th>
+                                        <td class="social">
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="button" data-bs-dismiss="modal">close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var userData = document.getElementById('userTarget')
+        userData.addEventListener('show.bs.modal', function(event) {
+            console.log('event', event)
+            var button = event.relatedTarget;
+
+            var name = button.getAttribute('data-bs-name');
+            var email = button.getAttribute('data-bs-email');
+            var social =  button.getAttribute('data-bs-social');
+            var className = userData.querySelector('.name');
+            var classEmail = userData.querySelector('.email');
+            var classSocail = userData.querySelector('.social');
+            className.textContent = name;
+            classEmail.textContent = email;
+            classSocail.textContent = social;
+        })
+    </script>
 </body>
 
 </html>

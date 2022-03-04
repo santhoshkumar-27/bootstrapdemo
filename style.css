@@ -31,6 +31,7 @@ html,body {
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    z-index: 0;
 }
 .bg-hero::before {
     content: '';
@@ -41,6 +42,7 @@ html,body {
     bottom: 0;
     background-color: black;
     opacity: 0.3;
+    z-index: -1;
 }
 .no-resize{
     resize: none;
